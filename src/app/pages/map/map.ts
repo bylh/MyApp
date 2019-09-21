@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { ConferenceData } from '../../providers/conference-data';
 import { Platform } from '@ionic/angular';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'page-map',
@@ -13,9 +14,7 @@ export class MapPage implements AfterViewInit {
   constructor(public confData: ConferenceData, public platform: Platform) {}
 
   async ngAfterViewInit() {
-    const googleMaps = await getGoogleMaps(
-      'AIzaSyB8pf6ZdFQj5qw7rc_HSGrhUwQKfIe9ICw'
-    );
+    const googleMaps = await getGoogleMaps(environment.Map.api_key);
     this.confData.getMap().subscribe((mapData: any) => {
       const mapEle = this.mapElement.nativeElement;
 
