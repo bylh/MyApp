@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import { Camera } from '@ionic-native/camera/ngx';
 @NgModule({
   imports: [
     BrowserModule,
@@ -24,7 +24,7 @@ import { environment } from '../environments/environment';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar],
+  providers: [InAppBrowser, SplashScreen, StatusBar, Camera],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

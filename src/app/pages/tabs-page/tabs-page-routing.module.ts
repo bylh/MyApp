@@ -1,3 +1,4 @@
+import { CameraComponent } from './../camera/camera.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
@@ -9,6 +10,15 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
+      {
+        path: 'camera',
+        children: [
+          {
+            path: '',
+            component: CameraComponent,
+          }
+        ]
+      },
       {
         path: 'schedule',
         children: [
