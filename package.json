@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "scp -P 22 -r www root@34.84.129.188:/home/bylicx/pro/MyApp/www"
   },
   "private": true,
   "dependencies": {
