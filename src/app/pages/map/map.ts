@@ -56,7 +56,8 @@ function getGoogleMaps(apiKey: string): Promise<any> {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
     // https://maps.googleapis.com/maps/api/js?key=${apiKey}&v=3.31
-    script.src = `http://maps.google.cn/maps/api/js?key=${apiKey}&v=3.31`;
+    // cn同时支持http和https
+    script.src = `https://maps.google.cn/maps/api/js?key=${apiKey}&v=3.31`;
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
