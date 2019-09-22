@@ -12,6 +12,7 @@ import { SessionDetailModule } from '../session-detail/session-detail.module';
 import { SpeakerDetailModule } from '../speaker-detail/speaker-detail.module';
 import { SpeakerListModule } from '../speaker-list/speaker-list.module';
 import { CameraModule } from '../camera/camera.module';
+import { NewsModule } from '../news/news.module';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { CameraModule } from '../camera/camera.module';
     SessionDetailModule,
     SpeakerDetailModule,
     SpeakerListModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    NewsModule
   ],
   declarations: [
     TabsPage,

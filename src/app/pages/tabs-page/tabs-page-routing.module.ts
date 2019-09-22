@@ -11,6 +11,13 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'news',
+        children: [{
+          path: '',
+        }]
+      },
+
+      {
         path: 'camera',
         children: [
           {
