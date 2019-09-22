@@ -1,4 +1,4 @@
-import { NewsService } from './../../services/news.service';
+import { NewsService } from '../../services/news.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSegment, IonContent } from '@ionic/angular';
 
