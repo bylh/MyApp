@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>News</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+    <ion-segment scrollable mode="md" (ionChange)="changeNewsType($event)" [value]="currentNews">
+        <ion-segment-button *ngFor="let item of newsTypes" [value]="item" [checked]="currentNews.id === item.id">
+          <!-- <ion-icon name="home"></ion-icon> -->
+          {{ item.title }}
+        </ion-segment-button>
+      </ion-segment>
+  <ion-list>
+    <ion-item *ngFor="let item of news" [href]="item.url" target="_blank" detail>
+      <ion-label>{{ item.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button size="small" color="light" expand="full" (click)="scrollToTop()">回到顶部</ion-button>
+  <!-- <ion-note (click)="scrollToTop()" color="primary">回到顶部</ion-note> -->
+</ion-content>

@@ -1,3 +1,4 @@
+import { NewsComponent } from './../news/news.component';
 import { CameraComponent } from './../camera/camera.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +15,7 @@ const routes: Routes = [
         path: 'news',
         children: [{
           path: '',
+          component: NewsComponent
         }]
       },
 
