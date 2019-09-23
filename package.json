@@ -9,6 +9,7 @@
     "start": "ng serve",
     "build": "ng build",
     "ionic:build": "ionic build --prod --service-worker",
+    "linux:build": "node --max_old_space_size=700 ./node_modules/@angular/cli/bin/ng build --prod",
     "test": "ng test --watch=false",
     "lint": "ng lint",
     "deploy": "scp -P 22 -r www root@34.84.129.188:/home/bylicx/pro/MyApp/www"
