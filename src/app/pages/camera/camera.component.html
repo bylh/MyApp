@@ -1,24 +1,34 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Camera</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Camera</ion-title>
+    <ion-buttons slot="end">
+        <ion-button color="primary" (click)="refresh()">
+          <ion-icon name="refresh"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-content>
-    <ion-grid>
-      <ion-row>
-      <ion-col size="12" *ngFor="let photo of photoService.randomPhotos">
-          <img [src]="photo.urls.regular" />
-          </ion-col>
-      </ion-row>
-    </ion-grid>
+<ion-content class="bylh-camera">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col class="photo-col" size="12" *ngFor="let photo of photoService.randomPhotos">
+        <img (click)="previewImg(photo.urls.regular)" class="img" [src]="photo.urls.small" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-        <ion-fab-button (click)="photoService.takePicture()">
-          <ion-icon name="camera"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
-  </ion-content>
+  <!-- <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="photoService.takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -48,7 +48,7 @@ export class PhotoService {
         url: `${environment.NestServerUrl}/photos`,
         method: 'get',
         params: {
-          count: 20
+          count: 6,
         }
       });
       this.randomPhotos = res.data;

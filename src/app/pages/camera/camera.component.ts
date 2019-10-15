@@ -15,5 +15,12 @@ export class CameraComponent implements OnInit {
     this.photoService.loadSaved();
     await this.photoService.getRandomPhotos();
   }
+  async refresh() {
+    await this.photoService.getRandomPhotos();
+  }
+
+  async previewImg(src: string) {
+    window.open(src)
+  }
 
 }
