@@ -42,14 +42,12 @@ export class PhotoService {
     });
   };
 
-  async getRandomPhotos() {
+  async getRandomPhotos(params = {count: 20, query: null}) {
     try {
       const res = await axios.request({
         url: `${environment.NestServerUrl}/photos`,
         method: 'get',
-        params: {
-          count: 10,
-        }
+        params
       });
       this.randomPhotos = res.data;
       return res.data as Array<Object>;

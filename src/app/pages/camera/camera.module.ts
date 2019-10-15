@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { CameraRoutingModule } from './camera-routing.module';
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { IonicModule } from '@ionic/angular';
   providers: [],
   imports: [
     CommonModule,
+    FormsModule,
     CameraRoutingModule,
     IonicModule
   ]

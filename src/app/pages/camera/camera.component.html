@@ -13,6 +13,7 @@
 </ion-header>
 
 <ion-content class="bylh-camera">
+  <ion-searchbar [(ngModel)]="params.query" (ionChange)="searchPhotos()" [debounce]="1000" placeholder="Search"></ion-searchbar>
   <ion-grid>
     <ion-row justify-content-center>
       <ion-col class="photo-col" size="12" *ngFor="let photo of photoService.randomPhotos">

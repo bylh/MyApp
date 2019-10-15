@@ -9,6 +9,10 @@ export class CameraComponent implements OnInit {
 
   currentImage: any;
 
+  params =  {
+    query: '',
+    count: 20
+  }
   constructor(public photoService: PhotoService) {  }
 
   async ngOnInit() {
@@ -16,11 +20,15 @@ export class CameraComponent implements OnInit {
     await this.photoService.getRandomPhotos();
   }
   async refresh() {
-    await this.photoService.getRandomPhotos();
+    await this.photoService.getRandomPhotos(this.params);
   }
 
   async previewImg(src: string) {
     window.open(src)
+  }
+
+  async searchPhotos() {
+    await this.photoService.getRandomPhotos(this.params);
   }
 
 }
